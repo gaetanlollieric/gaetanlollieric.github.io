@@ -70,6 +70,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+    box-shadow:inset 1px 1px 5px black;
     background-color: #ff914d;
     color: black;
 }
@@ -283,7 +284,8 @@ section h2{
 
 .projet-card p {
     margin-bottom: 1em;
-    color: black;
+        color: black;
+    text-align: left;
 }
 
 .projet-card .telecharger{
@@ -291,10 +293,14 @@ section h2{
     background-color: black;
     padding: 10px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
     transition: background-color 0.3s, color 0.3s;
+    box-shadow: 1px 1px 3px black;
 }
 
 .projet-card .telecharger:hover{
+    box-shadow:inset 1px 1px 5px black;
     color: black;
     background-color: #ff914d;
 }
@@ -336,4 +342,60 @@ section h2{
     .projet-card {
         width: 100%;
     }
+}
+
+
+.site-footer {
+    background-color: #222;
+    color: #eee;
+    padding: 30px 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+    margin: 10px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-section a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff914d;
+}
+
+.social-icons a {
+    color: #bbb;
+    margin-right: 10px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff914d;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #888;
 }
