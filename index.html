@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gaëtan LOLLIERIC</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/db5a202c4a.js" crossorigin="anonymous"></script>
+        <script type='text/javascript'>
+            var letexte = 'Gaëtan LOLLIERIC';
+            var cmpt = 0;
+
+            function typewriter() {
+                lelien = document.getElementById('titre');
+                if (cmpt < letexte.length) {
+                    courant = lelien.innerHTML.substring(0, lelien.innerHTML.length);
+                    courant += letexte.charAt(cmpt);
+                    lelien.innerHTML = courant;
+                }
+                cmpt++;
+                setTimeout(typewriter, 50);
+            }
+
+            window.onload = function() {
+                typewriter();
+            };
+        </script>
+    </head>
+    <body id="home">
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="#aPropos">A propos</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-phone"></i></a></li>
+            </ul> 
+        </nav>
+        <header id="#home">
+            <div id="textBonjour">
+                <img src="images/pp.jpeg"/>
+                <h1 id="titre"></h1>
+                <p>Bonjour, c'est Gaëtan je suis à la recherche d'une alternance pour mes deux prochaines années de BUT Informatique.</p>
+                <a href="fichiers/CV_Gaetan_LOLLIERIC.pdf" download><i class="fa-solid fa-download"></i>Mon CV</a>
+            </div>
+        </header>
+        <section class="smoothscroll gris-container" id="aPropos">
+            <div class="aPropos-container">
+                <div class="colonne gauche">
+                    <img src="images/pp.jpeg"/>
+                </div>
+                <div class="colonne droite">
+                    <div>
+                        <h2>À propos de moi</h2>
+                        <p>Gaëtan LOLLIERIC j'ai 18 ans,je suis actuellement en BUT Informatique à Lannion (22300). J'ai acqueris les bases de plusieurs langage de programmation (HTML5, CSS, java, C, SQL, PHP).  Je suis actuellement en recherche d'alternance en développeur logiciel, pour acquérir de l'expèrience professionnel et développer mon réseau</p>
+                    </div>
+                    <div id="competences">
+                        <h2>Mes compétences</h2>
+                        <p>Développer des applications informatiques simples<br>
+                            Appréhender et construire des algorithmes<br>
+                            Installer et configurer un poste de travail<br>
+                            Concevoir et mettre en place une base de données à partir d'un cahier des charges client<br>
+                            Identifier les besoins métiers des clients et des utilisateurs<br>
+                            Identifier ses aptitudes pour travailler dans une équipe</p>
+                    </div>
+                    <div>
+                        <h2>Contactez moi</h2>
+                        <p>Gaëtan LOLLIERIC</p>
+                        <p>10 Mez An Avalen Ploumagoar (22970)</p>
+                        <p><a href="mailto:gl.lollieric@gmail.com">gl.lollieric@gmail.com</a></p>
+                        <p><a href="tel:0768008267">07 68 00 82 67</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="monParcour" class="blanc-container">
+            <h2>Mon parcours</h2>
+            <div class="etudes">
+                <div>
+                    <h3>BAC Scientifique</h3>
+                    <p>Guingamp (22200)<br>
+                    spécialité :</p>
+                    <ul>
+                        <li>Mathématiques</li>
+                        <li>Numérique et Sciences Informatiques</li>
+                        <li>Physique Chimie</li>
+                    </ul>
+                    <a href="https://www.lycee-pavie.fr/" class="cta">
+                        <span class="hover-underline-animation">en savoir plus</span>
+                        <svg
+                            id="arrow-horizontal"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="10"
+                            viewBox="0 0 46 16">
+                        <path
+                            id="Path_10"
+                            data-name="Path 10"
+                            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                            transform="translate(30)">
+                        </path>
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <h3>BUT Informatique</h3>
+                    <p>Lannion (22300)</p>
+                    <a href="https://iut-lannion.univ-rennes.fr/" class="cta">
+                        <span class="hover-underline-animation">en savoir plus</span>
+                        <svg
+                            id="arrow-horizontal"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="10"
+                            viewBox="0 0 46 16">
+                        <path
+                            id="Path_10"
+                            data-name="Path 10"
+                            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                            transform="translate(30)">
+                        </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="gris-container" id="projets">
+            <h2>Mes projets</h2>
+            <p>Voici une liste des projets que j'ai réalisé.</p>
+            <div class="projets-container ">
+                <div class="projet-card">
+                    <h3>Snake</h3>
+                    <img src="images/apercu_snake.jpg"/>
+                    <p>Compétence :<br>Développer des applications informatiques simples</p>
+                    <a class="telecharger" href="fichiers/Snake.c" download><i class="fa-solid fa-download"></i></a>
+                    <ul>
+                        <li><img class="icones" src="https://cdn-icons-png.flaticon.com/128/7496/7496932.png"/>C</li>
+                    </ul>
+                </div>
+                <div class="projet-card">
+                    <h3>Duel de snake automatisé</h3>
+                    <img src="images/apercu_snake_auto.jpg"/>
+                    <p>Compétence :<br>Appréhender et construire des algorithmes</p>
+                    <a class="telecharger" href="fichiers/snakeV4t.c" download><i class="fa-solid fa-download"></i></a>
+                    <ul>
+                        <li><img class="icones" src="https://cdn-icons-png.flaticon.com/128/7496/7496932.png"/>C</li>
+                    </ul> 
+                </div>
+                <div class="projet-card">
+                    <h3>Site web des Jeux Olympiques 2024</h3>
+                    <img src="images/apercu_figma.png"/>
+                    <p>Compétence :<br>Identifier les besoins métiers des clients et des utilisateurs</p>
+                    <a class="cta" href="https://www.figma.com/design/sidBRkFgbmnJPrurfxASFX/Accueil?node-id=0-1&t=37HXwC7JEwATPMWE-1">
+                        <span class="hover-underline-animation">en savoir plus</span>
+                            <svg
+                                id="arrow-horizontal"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="30"
+                                height="10"
+                                viewBox="0 0 46 16">
+                            <path
+                                id="Path_10"
+                                data-name="Path 10"
+                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                transform="translate(30)">
+                            </path>
+                            </svg>
+                    </a>
+                    <ul>
+                        <li><i class="fa-brands fa-figma"></i>Figma</li>
+                        <li><i class="fa-brands fa-html5"></i>HTLM5</li>
+                        <li><i class="fa-brands fa-css3-alt"></i>CSS</li>
+                    </ul>
+                </div>
+                <div class="projet-card">
+                    <h3>Docker</h3>
+                    <img src="images/apercu_docker.jpg"/>
+                    <p>Compétence :<br>Installer et configurer un poste de travail</p>
+                    <a class="telecharger" href="fichiers/docker.zip" download><i class="fa-solid fa-download"></i></a>
+                    <ul>
+                        <li><i class="fa-brands fa-docker"></i>Docker</li>
+                        <li><i class="fa-solid fa-terminal"></i>Bash</li>
+                    </ul>
+                </div>
+                <div class="projet-card">
+                    <h3>Base de donées</h3>
+                    <img src="images/apercu_bdd.jpg"/>
+                    <p>Compétence :<br>Concevoir et mettre en place une base de données à partir d'un cahier des charges client</p>
+                    <a class="telecharger" href="fichiers/BDD.zip" download><i class="fa-solid fa-download"></i></a>
+                    <ul>
+                        <li><i class="fa-solid fa-database"></i>SQL</li>
+                    </ul>
+                </div>
+                <div class="projet-card">
+                    <h3>SEL et RSE de Danone</h3>
+                    <img src="images/apercu_danone.jpg"/>
+                    <p>Compétence :<br>Identifier ses aptitudes pour travailler dans une équipe</p>
+                    <a class="telecharger" href="fichiers/Danone.zip" download><i class="fa-solid fa-download"></i></a>
+                    <ul>
+                        <li><i class="fa-solid fa-magnifying-glass"></i>Recherche</li>
+                    </ul>
+                </div>
+                <div class="projet-card">
+                    <h3>site web Flask légo</h3>
+                    <img src="images/apercu_brik.jpg"/>
+                    <p>Ce projet avait pour but de créer une application Flask à l'aide de python, HTLM, CSS et SQL.</p>
+                    <a class="telecharger" href="fichiers/projetLegoGaetanLollieric.zip" download><i class="fa-solid fa-download"></i></a>
+                    <ul>
+                        <li><i class="fa-brands fa-python"></i>Python</li>
+                        <li><i class="fa-brands fa-html5"></i>HTLM5</li>
+                        <li><i class="fa-brands fa-css3-alt"></i>CSS</li>
+                        <li><i class="fa-solid fa-database"></i>SQL</li>
+                    </ul>
+                </div>
+                <div class="projet-card">
+                    <h3>Space Invador</h3>
+                    <img src="images/apercu_spaceInvador.jpg"/>
+                    <p>lorem ipsum</p>
+                    <a class="telecharger" href="fichiers/spaceInvador.zip" download><i class="fa-solid fa-download"></i></a>
+                    <ul>
+                        <li><i class="fa-brands fa-python"></i>Python</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <p>lorem ipsum</p>
+    </footer>
+</html>
