@@ -6,9 +6,10 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/db5a202c4a.js" crossorigin="anonymous"></script>
         <script type='text/javascript'>
+            <!-- pour le texte afficher letre par lettre -->
             var letexte = 'Gaëtan LOLLIERIC';
             var cmpt = 0;
-
+            
             function typewriter() {
                 lelien = document.getElementById('titre');
                 if (cmpt < letexte.length) {
@@ -23,7 +24,31 @@
             window.onload = function() {
                 typewriter();
             };
-        </script>
+
+
+            <!-- pour les textes afficher après click sur la div -->
+            document.querySelectorAll('.projet-card').forEach(card => {
+            card.addEventListener('click', function () {
+                const title = this.querySelector('h3').innerText;
+                const desc = this.getAttribute('data-description');
+        
+                document.getElementById('popup-title').innerText = title;
+                document.getElementById('popup-description').innerText = desc;
+                document.getElementById('popup').classList.remove('hidden');
+            });
+          });
+        
+          document.querySelector('.popup .close').addEventListener('click', () => {
+            document.getElementById('popup').classList.add('hidden');
+          });
+        
+          // Optionnel : fermer si on clique en dehors
+          document.getElementById('popup').addEventListener('click', function (e) {
+            if (e.target === this) {
+              this.classList.add('hidden');
+            }
+          });
+       </script>
     </head>
     <body id="home">
         <nav>
@@ -130,7 +155,7 @@
             <p>Voici une liste des projets que j'ai réalisé.</p>
             <div class="projets-container ">
 
-                <div class="projet-card">
+                <div class="projet-card" data-description="Jeu développé en C pour un affichage dans le terminal. Grâce à ce projet j'ai pu appredre les bases du langage C. Un projet qui m'a beaucoup plus alors n'hésitez pas à le tester. Ha oui et d'ailleur il se joue avec les touches z, q, s, d.">
                     <h3>Snake</h3>
                     <img src="images/apercu_snake.jpg"/>
                     <p>Compétence :<br>Développer des applications informatiques simples</p>
@@ -253,5 +278,12 @@
                 <p>&copy; 2025 Gaëtan LOLLIERIC. Tous droits réservés.</p>
             </div>
         </footer>
+        <div id="popup" class="popup hidden">
+          <div class="popup-content">
+            <span class="close">&times;</span>
+            <h3 id="popup-title"></h3>
+            <p id="popup-description"></p>
+          </div>
+        </div>
     </body>
 </html>
