@@ -5,50 +5,51 @@
         <title>Gaëtan LOLLIERIC</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/db5a202c4a.js" crossorigin="anonymous"></script>
-        <script type='text/javascript'>
-            <!-- pour le texte afficher letre par lettre -->
+        <script type="text/javascript">
             var letexte = 'Gaëtan LOLLIERIC';
             var cmpt = 0;
-            
+        
             function typewriter() {
-                lelien = document.getElementById('titre');
+                let lelien = document.getElementById('titre');
                 if (cmpt < letexte.length) {
-                    courant = lelien.innerHTML.substring(0, lelien.innerHTML.length);
+                    let courant = lelien.innerHTML.substring(0, lelien.innerHTML.length);
                     courant += letexte.charAt(cmpt);
                     lelien.innerHTML = courant;
+                    cmpt++;
+                    setTimeout(typewriter, 50);
                 }
-                cmpt++;
-                setTimeout(typewriter, 50);
             }
-
-            window.onload = function() {
+        
+            window.onload = function () {
                 typewriter();
+        
+                // Pop-up sur les cartes projet
+                document.querySelectorAll('.projet-card').forEach(card => {
+                    card.addEventListener('click', function () {
+                        const title = this.querySelector('h3').innerText;
+                        const desc = this.getAttribute('data-description') || this.querySelector('p')?.innerText || 'Pas de description disponible.';
+                        
+                        document.getElementById('popup-title').innerText = title;
+                        document.getElementById('popup-description').innerText = desc;
+                        document.getElementById('popup').classList.remove('hidden');
+                    });
+                });
+        
+                const closeBtn = document.querySelector('.popup .close');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', () => {
+                        document.getElementById('popup').classList.add('hidden');
+                    });
+                }
+        
+                document.getElementById('popup').addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        this.classList.add('hidden');
+                    }
+                });
             };
+        </script>
 
-
-            <!-- pour les textes afficher après click sur la div -->
-            document.querySelectorAll('.projet-card').forEach(card => {
-            card.addEventListener('click', function () {
-                const title = this.querySelector('h3').innerText;
-                const desc = this.getAttribute('data-description');
-        
-                document.getElementById('popup-title').innerText = title;
-                document.getElementById('popup-description').innerText = desc;
-                document.getElementById('popup').classList.remove('hidden');
-            });
-          });
-        
-          document.querySelector('.popup .close').addEventListener('click', () => {
-            document.getElementById('popup').classList.add('hidden');
-          });
-        
-          // Optionnel : fermer si on clique en dehors
-          document.getElementById('popup').addEventListener('click', function (e) {
-            if (e.target === this) {
-              this.classList.add('hidden');
-            }
-          });
-       </script>
     </head>
     <body id="home">
         <nav>
