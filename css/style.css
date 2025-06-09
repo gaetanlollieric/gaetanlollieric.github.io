@@ -256,6 +256,7 @@ section h2{
     background-color: #ff914d;
     border-radius: 2em;
     padding: 2em;
+    min-width: calc(50% - 1.5%);
     max-width: calc(50% - 1.5%);
     box-sizing: border-box;
     color: black;
