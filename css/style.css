@@ -417,6 +417,7 @@ section h2{
     background: rgba(0,0,0,0.8); /* Fond plus sombre pour l'effet "nouvelle page" */
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
     z-index: 9999; /* Z-index très élevé pour être au-dessus de tout */
 }
