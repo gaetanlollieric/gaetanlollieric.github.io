@@ -256,8 +256,8 @@ section h2{
     background-color: #ff914d;
     border-radius: 2em;
     padding: 2em;
-    min-width: calc(50% - 1.5%);
     max-width: calc(50% - 1.5%);
+    min-width: calc(50% - 1.5%);
     box-sizing: border-box;
     color: black;
     text-align: center;
@@ -428,7 +428,7 @@ section h2{
     width: 90%; /* S'adapte mieux sur les petits écrans */
     border-radius: 10px;
     position: relative;
-    text-align: center;
+    text-align: left;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Ombre plus prononcée */
     max-height: 80vh; /* Limite la hauteur et permet le défilement */
     overflow-y: auto; /* Ajoute une barre de défilement si le contenu est trop grand */
