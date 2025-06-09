@@ -48,6 +48,27 @@
                     }
                 });
             };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const popup = document.getElementById('monPopup');
+                const ouvrirBtn = document.getElementById('ouvrirPopup');
+                const fermerBtn = document.getElementById('fermerPopup');
+            
+                ouvrirBtn.addEventListener('click', () => {
+                  popup.classList.remove('hidden');
+                });
+            
+                fermerBtn.addEventListener('click', () => {
+                  popup.classList.add('hidden');
+                });
+            
+                // Fermer le popup si on clique en dehors du contenu
+                window.addEventListener('click', (e) => {
+                  if (e.target === popup) {
+                    popup.classList.add('hidden');
+                  }
+                });
+            });
         </script>
 
     </head>
