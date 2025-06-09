@@ -8,7 +8,7 @@
         <script type="text/javascript">
             var letexte = 'Gaëtan LOLLIERIC';
             var cmpt = 0;
-        
+           
             function typewriter() {
                 let lelien = document.getElementById('titre');
                 if (cmpt < letexte.length) {
@@ -19,56 +19,46 @@
                     setTimeout(typewriter, 50);
                 }
             }
-        
+           
             window.onload = function () {
                 typewriter();
-        
+           
                 // Pop-up sur les cartes projet
                 document.querySelectorAll('.projet-card').forEach(card => {
                     card.addEventListener('click', function () {
                         const title = this.querySelector('h3').innerText;
                         const desc = this.getAttribute('data-description') || this.querySelector('p')?.innerText || 'Pas de description disponible.';
-                        
+                        const image = this.getAttribute('data-image'); // Récupère l'image
+                       
                         document.getElementById('popup-title').innerText = title;
                         document.getElementById('popup-description').innerText = desc;
+                       
+                        const popupImage = document.getElementById('popup-image');
+                        if (image) {
+                            popupImage.src = image;
+                            popupImage.classList.remove('hidden'); // Affiche l'image
+                        } else {
+                            popupImage.classList.add('hidden'); // Cache l'image si elle n'existe pas
+                        }
+
                         document.getElementById('popup').classList.remove('hidden');
                     });
                 });
-        
+           
                 const closeBtn = document.querySelector('.popup .close');
                 if (closeBtn) {
                     closeBtn.addEventListener('click', () => {
                         document.getElementById('popup').classList.add('hidden');
                     });
                 }
-        
+           
+                // Ferme la pop-up si on clique en dehors du contenu (sur l'overlay)
                 document.getElementById('popup').addEventListener('click', function (e) {
                     if (e.target === this) {
                         this.classList.add('hidden');
                     }
                 });
             };
-
-            document.addEventListener('DOMContentLoaded', () => {
-                const popup = document.getElementById('monPopup');
-                const ouvrirBtn = document.getElementById('ouvrirPopup');
-                const fermerBtn = document.getElementById('fermerPopup');
-            
-                ouvrirBtn.addEventListener('click', () => {
-                  popup.classList.remove('hidden');
-                });
-            
-                fermerBtn.addEventListener('click', () => {
-                  popup.classList.add('hidden');
-                });
-            
-                // Fermer le popup si on clique en dehors du contenu
-                window.addEventListener('click', (e) => {
-                  if (e.target === popup) {
-                    popup.classList.add('hidden');
-                  }
-                });
-            });
         </script>
 
     </head>
@@ -79,7 +69,7 @@
                 <li><a href="#aPropos">A propos</a></li>
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#contact"><i class="fa-solid fa-phone"></i></a></li>
-            </ul> 
+            </ul>   
         </nav>
         <header id="#home">
             <div id="textBonjour">
@@ -177,41 +167,27 @@
             <p>Voici une liste des projets que j'ai réalisé.</p>
             <div class="projets-container ">
 
-                <div class="projet-card" data-description='Jeu développé en C avec un affichage dans le terminal. Ce projet m’a permis d’apprendre les bases du langage C.
-                                                            Il m’a beaucoup plu, alors n’hésitez pas à le tester !
-                                                            Il se joue avec les touches Z, Q, S, D.
-                                                            Les pommes sont représentées par les caractères "6", les obstacles par des "#", et les espaces sur les bordures sont des portails.
-                                                            Bonne partie !'>
+                <div class="projet-card" data-description='Jeu développé en C avec un affichage dans le terminal. Ce projet m’a permis d’apprendre les bases du langage C. Il m’a beaucoup plu, alors n’hésitez pas à le tester ! Il se joue avec les touches Z, Q, S, D. Les pommes sont représentées par les caractères "6", les obstacles par des "#", et les espaces sur les bordures sont des portails. Bonne partie !' data-image="images/apercu_snake.jpg">
                     <h3>Snake</h3>
                     <img src="images/apercu_snake.jpg"/>
                     <p>Compétence :<br>Développer des applications informatiques simples</p>
-                    <button class="cta" id="ouvrirPopup">
-                        <span class="hover-underline-animation">Ouvrir le popup</span>
-                    </button>
                     <a class="telecharger" href="fichiers/Snake.c" download><i class="fa-solid fa-download"></i>Télécharger</a>
                     <ul>
                         <li><img class="icones" src="https://cdn-icons-png.flaticon.com/128/7496/7496932.png"/>C code</li>
                     </ul>
                 </div>
 
-                <div class="projet-card" data-description='Ce duel de Snake est une extension du projet Snake. Il met en scène deux serpents qui s’affrontent pour manger le plus de pommes.
-                                                            Ce projet m’a permis de découvrir et comparer différentes approches algorithmiques, notamment pour que les deux serpents trouvent le chemin le plus court vers les pommes.
-                                                            Les pommes sont représentées par le caractère "6", les obstacles par des "#", et les espaces sur les bordures font office de portails.'>
+                <div class="projet-card" data-description='Ce duel de Snake est une extension du projet Snake. Il met en scène deux serpents qui s’affrontent pour manger le plus de pommes. Ce projet m’a permis de découvrir et comparer différentes approches algorithmiques, notamment pour que les deux serpents trouvent le chemin le plus court vers les pommes. Les pommes sont représentées par le caractère "6", les obstacles par des "#", et les espaces sur les bordures font office de portails.' data-image="images/apercu_snake_auto.jpg">
                     <h3>Duel de snake automatisé</h3>
                     <img src="images/apercu_snake_auto.jpg"/>
                     <p>Compétence :<br>Appréhender et construire des algorithmes</p>
-                    <button class="cta" id="ouvrirPopup">
-                        <span class="hover-underline-animation">Ouvrir le popup</span>
-                    </button>
                     <a class="telecharger" href="fichiers/snakeV4t.c" download><i class="fa-solid fa-download"></i>Télécharger</a>
                     <ul>
                         <li><img class="icones" src="https://cdn-icons-png.flaticon.com/128/7496/7496932.png"/>C code</li>
-                    </ul> 
+                    </ul>   
                 </div>
 
-                <div class="projet-card" data-description='Ce projet de site web m’a permis d’apprendre à maquetter avec Figma avant de passer au développement, afin d’avoir une vision claire du rendu final.
-                                                            Il m’a également appris à respecter un cahier des charges et à développer un site responsive, une compétence aujourd’hui essentielle.
-                                                            Peut-être que ce site sera mis en ligne un jour... Qui sait !'>
+                <div class="projet-card" data-description='Ce projet de site web m’a permis d’apprendre à maquetter avec Figma avant de passer au développement, afin d’avoir une vision claire du rendu final. Il m’a également appris à respecter un cahier des charges et à développer un site responsive, une compétence aujourd’hui essentielle. Peut-être que ce site sera mis en ligne un jour... Qui sait !' data-image="images/apercu_figma.png">
                     <h3>Site web des Jeux Olympiques 2024</h3>
                     <img src="images/apercu_figma.png"/>
                     <p>Compétence :<br>Identifier les besoins métiers des clients et des utilisateurs</p>
@@ -238,8 +214,7 @@
                     </ul>
                 </div>
 
-                <div class="projet-card" data-description='Ce projet m’a permis d’apprendre les bases de Bash et de Docker.
-L’objectif                                                 L’objectif était de développer des outils pour faciliter le travail d’une équipe de développeurs, en automatisant certaines tâches répétitives.'>
+                <div class="projet-card" data-description='Ce projet m’a permis d’apprendre les bases de Bash et de Docker. L’objectif était de développer des outils pour faciliter le travail d’une équipe de développeurs, en automatisant certaines tâches répétitives.' data-image="images/apercu_docker.jpg">
                     <h3>Docker</h3>
                     <img src="images/apercu_docker.jpg"/>
                     <p>Compétence :<br>Installer et configurer un poste de travail</p>
@@ -250,7 +225,7 @@ L’objectif                                                 L’objectif était
                     </ul>
                 </div>
 
-                <div class="projet-card" data-description='Dans ce projet, nous devions concevoir une base de données ainsi qu’un diagramme UML, tout en respectant un cahier des charges précis.'>
+                <div class="projet-card" data-description='Dans ce projet, nous devions concevoir une base de données ainsi qu’un diagramme UML, tout en respectant un cahier des charges précis.' data-image="images/apercu_bdd.jpg">
                     <h3>Base de donées</h3>
                     <img src="images/apercu_bdd.jpg"/>
                     <p>Compétence :<br>Concevoir et mettre en place une base de données à partir d'un cahier des charges client</p>
@@ -260,7 +235,7 @@ L’objectif                                                 L’objectif était
                     </ul>
                 </div>
 
-                <div class="projet-card" data-description='Dans ce projet, nous devions réaliser une analyse SEL (Situation d’Environnement Local) et RSE (Responsabilité Sociétale des Entreprises) d’une entreprise, ainsi qu’une présentation détaillée de celle-ci.'>
+                <div class="projet-card" data-description='Dans ce projet, nous devions réaliser une analyse SEL (Situation d’Environnement Local) et RSE (Responsabilité Sociétale des Entreprises) d’une entreprise, ainsi qu’une présentation détaillée de celle-ci.' data-image="images/apercu_danone.jpg">
                     <h3>SEL et RSE de Danone</h3>
                     <img src="images/apercu_danone.jpg"/>
                     <p>Compétence :<br>Identifier ses aptitudes pour travailler dans une équipe</p>
@@ -270,9 +245,7 @@ L’objectif                                                 L’objectif était
                     </ul>
                 </div>
 
-                <div class="projet-card" data-description='Ce projet est un travail que j’ai réalisé au lycée. Étant passionné de LEGO, j’ai décidé de créer mon propre catalogue de LEGO et de pouvoir le tenir à jour.
-                                                            Il évoluera avec le temps, c’est certain.
-                                                            C’est un projet que j’ai vraiment adoré concevoir, et j’y ai consacré beaucoup de temps.'>
+                <div class="projet-card" data-description='Ce projet est un travail que j’ai réalisé au lycée. Étant passionné de LEGO, j’ai décidé de créer mon propre catalogue de LEGO et de pouvoir le tenir à jour. Il évoluera avec le temps, c’est certain. C’est un projet que j’ai vraiment adoré concevoir, et j’y ai consacré beaucoup de temps.' data-image="images/apercu_brik.jpg">
                     <h3>site web Flask légo</h3>
                     <img src="images/apercu_brik.jpg"/>
                     <p>Un catalogue de lego pour vous! Ce projet avait pour but de créer une application Flask à l'aide de python, HTLM, CSS et SQL, pour rechercher des informations sur les sets LEGO.</p>
@@ -285,7 +258,7 @@ L’objectif                                                 L’objectif était
                     </ul>
                 </div>
 
-                <div class="projet-card" data-description='Comme pour le projet LEGO, c’est un projet que j’ai réalisé pour le lycée. J’y ai aussi consacré beaucoup de temps et j’ai découvert la bibliothèque Pygame.'>
+                <div class="projet-card" data-description='Comme pour le projet LEGO, c’est un projet que j’ai réalisé pour le lycée. J’y ai aussi consacré beaucoup de temps et j’ai découvert la bibliothèque Pygame.' data-image="images/apercu_spaceInvador.jpg">
                     <h3>Space Invaders</h3>
                     <img src="images/apercu_spaceInvador.jpg"/>
                     <p>Un Space Invaders revisité à ma façon, n'hésitez pas à le tester!</p>
@@ -318,11 +291,12 @@ L’objectif                                                 L’objectif était
             </div>
         </footer>
         <div id="popup" class="popup hidden">
-          <div class="popup-content">
-            <span class="close">&times;</span>
-            <h3 id="popup-title"></h3>
-            <p id="popup-description"></p>
-          </div>
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h3 id="popup-title"></h3>
+                <img id="popup-image" class="hidden" alt="Aperçu du projet">
+                <p id="popup-description"></p>
+            </div>
         </div>
     </body>
 </html>
