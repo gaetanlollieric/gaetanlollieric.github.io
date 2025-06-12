@@ -268,8 +268,13 @@ section h2{
     flex-direction: column;
     align-items: center;
     cursor: pointer; /* Ajouté pour indiquer que c'est cliquable */
+    transition: transform 0.5s ease-in-out;
 }
 
+.projet-card:hover {
+    transform: translateX(8px);
+}
+    
 .projet-card img {
     max-height: 500px;
     width: 100%;
