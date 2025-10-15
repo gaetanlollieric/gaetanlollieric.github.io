@@ -13,16 +13,18 @@
 }
 
 
-a{
+a {
     text-decoration: none;
 }
 
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
     font-family: 'Lucidity Consended', 'Bruno Ace', "Arial";
 }
 
-h1{
+h1 {
     font-size: 500%;
 }
 
@@ -30,7 +32,8 @@ html {
     font-family: Arial, sans-serif;
 }
 
-html, body {
+html,
+body {
     margin: 0;
 }
 
@@ -40,7 +43,7 @@ nav {
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: center;   
+    justify-content: center;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(1px);
@@ -70,7 +73,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    box-shadow:inset 1px 1px 5px black;
+    box-shadow: inset 1px 1px 5px black;
     background-color: #ff914d;
     color: black;
 }
@@ -82,22 +85,24 @@ header {
     width: 100%;
     text-align: center;
     color: #fff;
-    margin-top: -110px; 
-    padding-top: 60px; 
+    margin-top: -110px;
+    padding-top: 60px;
     background: #161415 url(../images/header-background.jpg) no-repeat center;
     background-size: cover;
 }
 
-header img{
+header img {
     width: 250px;
     border-radius: 900px;
 }
-header i{
+
+header i {
     margin-right: 1em;
 }
 
-#textBonjour{
-    margin-top: 100px;;
+#textBonjour {
+    margin-top: 100px;
+    ;
 }
 
 #aPropos {
@@ -121,17 +126,19 @@ header i{
     justify-content: center;
 }
 
-.colonne a, header a{
+.colonne a,
+header a {
     text-decoration: none;
     color: #bbb;
     transition: color 0.3s;
 }
 
-section h2{
+section h2 {
     text-align: center;
 }
 
-.colonne a:hover, header a:hover{
+.colonne a:hover,
+header a:hover {
     color: #ff914d;
 }
 
@@ -141,7 +148,7 @@ section h2{
     margin: 0 auto;
 }
 
-.colonne.droite > div {
+.colonne.droite>div {
     margin-bottom: 20px;
     text-align: left;
 }
@@ -152,11 +159,11 @@ section h2{
     width: 70%;
     margin: 0 auto;
     flex-wrap: wrap;
-    gap: 3%; 
+    gap: 3%;
 }
 
-.etudes > div {
-    flex: 260px; 
+.etudes>div {
+    flex: 260px;
     max-width: calc(50% - 1.5%);
     background-color: #ff914d;
     border-radius: 2em;
@@ -171,14 +178,14 @@ section h2{
         align-items: center;
     }
 
-    .etudes > div {
+    .etudes>div {
         max-width: 90%;
     }
 }
 
 
 
-.etudes > div > h3{
+.etudes>div>h3 {
     text-align: center;
 }
 
@@ -189,7 +196,6 @@ section h2{
 }
 
 .cta span {
-    padding-bottom: 7px;
     padding-right: 15px;
 }
 
@@ -243,110 +249,108 @@ section h2{
     padding: 25px 0;
 }
 
+
+
 .projets-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;   
-    gap: 2em;
-    width: 70%;
+    justify-content: center;
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .projet-card {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
     background-color: #ff914d;
-    border-radius: 2em;
-    padding: 2em;
-    max-width: calc(50% - 1.5%);
-    min-width: calc(50% - 1.5%);
-    box-sizing: border-box;
     color: black;
+    border-radius: 15px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-    overflow: hidden;   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer; /* Ajouté pour indiquer que c'est cliquable */
-    transition: transform 0.5s ease-in-out;
+    padding: auto;
 }
 
 .projet-card:hover {
-    transform: translateX(8px);
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
 }
-    
+
 .projet-card img {
-    max-height: 500px;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+    width: 90%;
+    height: 200px;
+    margin: 0 0 0.5em 0;
     display: block;
-    margin: 0 auto 1em;
-    border-radius: 2em;
+    margin: auto;
 }
+
 
 .projet-card h3 {
-    margin: 0.5em 0;
+    text-align: center;
+    font-size: 1.3em;
 }
 
-.projet-card p {
-    margin-bottom: 1em;
-        color: black;
-    text-align: left;
-}
-
-.projet-card .telecharger{
-    color: #ff914d;
-    background-color: black;
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s, color 0.3s;
-    box-shadow: 1px 1px 3px black;
-    /* Styles pour s'assurer que le bouton de téléchargement ne déclenche pas le popup */
-    position: relative;
-    z-index: 1; 
-}
-
-.projet-card .telecharger:hover{
-    box-shadow:inset 1px 1px 5px black;
-    color: black;
-    background-color: #ff914d;
-}
 
 .projet-card ul {
     list-style: none;
-    padding: 0;
+    padding: 17px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 1em;
-    margin-top: 1em;
+    gap: 8px 8px;
+    margin: 5px 0 10px 0;
 }
 
 .projet-card ul li {
     display: flex;
     align-items: center;
-    gap: 0.5em;
-    font-weight: bold;
+    gap: 0.3em;
+    font-size: 0.9em;
+    color: #ff914d;
+    background-color: #2B2B2B;
+    padding: 5px 8px;
+    border-radius: 15px;
 }
 
-.projet-card i{
-    font-size: 1.5em;
-    height: 24px;
+.projet-card i {
+    font-size: 1.1em;
+    height: auto;
 }
 
-.projet-card .icones{
-    height: 25px;
-    border-radius: 0px;
+.projet-card .icones {
+    height: 18px;
+    width: auto;
 }
+
+
+.projet-card .cta {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+}
+
+.projet-card .hover-underline-animation {
+    padding-bottom: 0;
+    color: black;
+}
+
+.projet-card .telecharger,
+.projet-card .cta {
+    text-decoration: none;
+}
+
 
 @media screen and (max-width: 900px) {
     .projets-container {
         flex-direction: column;
         align-items: center;
-        width: 90%; 
+        width: 90%;
+        gap: 20px;
     }
 
     .projet-card {
@@ -408,58 +412,4 @@ section h2{
     padding-top: 10px;
     font-size: 13px;
     color: #888;
-}
-
-
-
-/***************************POP UP***************************************/
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8); /* Fond plus sombre pour l'effet "nouvelle page" */
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    z-index: 9999; /* Z-index très élevé pour être au-dessus de tout */
-}
-
-.popup-content {
-    background: white;
-    padding: 30px; /* Augmenter un peu le padding */
-    max-width: 700px; /* Augmenter la largeur maximale pour plus de contenu */
-    width: 90%; /* S'adapte mieux sur les petits écrans */
-    border-radius: 10px;
-    position: relative;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Ombre plus prononcée */
-    max-height: 80vh; /* Limite la hauteur et permet le défilement */
-    overflow-y: auto; /* Ajoute une barre de défilement si le contenu est trop grand */
-}
-
-.popup .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px; /* Plus grand et plus visible */
-    cursor: pointer;
-    color: #333; /* Couleur plus contrastée */
-}
-
-.popup .close:hover {
-    color: #ff914d;
-}
-
-.popup-content img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 15px;
-    border-radius: 8px;
-}
-
-.hidden {
-    display: none;
 }
