@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'Bruno Ace';
+    src: url('police/BrunoAce-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lucidity Consended';
+    src: url('police/lucidity-condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Lucidity Consended', 'Bruno Ace', "Arial";
+    text-align: center;
+    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #161415 url(../images/header-background.jpg) no-repeat center;
+    color: white;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1px);
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+
+nav ul li {
+    margin: 3px 15px;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #ff914d;
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    box-shadow: inset 1px 1px 5px black;
+    background-color: #ff914d;
+    color: black;
+}
+
+#Star {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.lettreStar {
+    background-color: #ff914d;
+    color: black;
+    border-radius: 15px;
+    padding: 15px 20px;
+    flex-grow: 1;
+    text-align: left;
+    width: 350px;
+}
+
+.lettreStar:first-child::before {
+    text-align: center;
+    content: "S";
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.lettreStar:nth-child(2)::before {
+    text-align: center;
+    content: "T";
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.lettreStar:nth-child(3)::before {
+    text-align: center;
+    content: "A";
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.lettreStar:last-child::before {
+    text-align: center;
+    content: "R";
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+body>ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+body>ul>li {
+    background-color: #2B2B2B;
+    color: #ff914d;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #ff914d;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+body>ul>li:hover {
+    background-color: #ff914d;
+    color: black;
+    transform: translateY(-2px);
+}
+
+body>ul>li i {
+    margin-right: 5px;
+    font-size: 1.1em;
+}
+
+
+
+
+
+/* Style pour la bannière de construction  fais avec IA je l'avoue*/
+#construction-banner {
+
+    width: 100%;
+    background-color: #ff914d;
+    /* Utilisation de votre couleur d'accentuation */
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 2000;
+    /* Assurez-vous qu'elle est au-dessus de tout */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#construction-banner p {
+    margin: 0;
+    font-weight: bold;
+    flex-grow: 1;
+}
